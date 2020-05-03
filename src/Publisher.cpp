@@ -48,7 +48,7 @@ int main(int argc, char **argv) {
   try {
     ros::init(argc, argv, "palchukovsky_publisher");
 
-    Publisher pub("palchukovsky");
+    Publisher pub("/demo/text");
     pub.Start({0, 500});
 
     ros::spin();

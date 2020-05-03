@@ -14,7 +14,7 @@ int main(int argc, char **argv) {
   try {
     ros::init(argc, argv, "palchukovsky_subscriber");
     ros::NodeHandle node;
-    auto subscriber = node.subscribe("palchukovsky", 1000, printMessage);
+    auto subscriber = node.subscribe("/demo/text", 1000, printMessage);
     ros::spin();
   } catch (const std::exception &ex) {
     ROS_FATAL(R"(Fatal error: "%s".)", ex.what());
