@@ -1,5 +1,4 @@
-
-.PHONY: build run-pub run-sub
+.PHONY: build run-pub run-sub launch-pub-sub
 .DEFAULT_GOAL := build
 
 build:
@@ -13,3 +12,7 @@ run-pub:
 run-sub:
 	cd ../../../../; \
 		rosrun demo sub
+
+launch-pub-sub:
+	cd ../../../../; \
+		roslaunch demo pub_sub.launch
