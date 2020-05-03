@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>demo</name>
+  <version>1.0.0</version>
+  <description>The Palchukovsky's demo package</description>
+  <maintainer email="eugene.palchukovsky@somewhere.com">palchukovsky</maintainer>
+  <license>Apache 2.0</license>
+  <buildtool_depend>catkin</buildtool_depend>
+  <depend>amathutils_lib</depend>
+  <depend>autoware_build_flags</depend>
+  <depend>autoware_msgs</depend>
+  <depend>roscpp</depend>
+  <depend>std_msgs</depend>
+</package>
