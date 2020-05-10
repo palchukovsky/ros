@@ -1,0 +1,4 @@
+<launch>
+  <node name="demo_pub_py" pkg="demo" type="pub.py" />
+  <node name="demo_sub_py" pkg="demo" type="sub.py" />
+</launch>

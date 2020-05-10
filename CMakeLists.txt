@@ -5,23 +5,19 @@ add_compile_options(-Wall -pedantic -std=c++17 -Wfatal-errors)
 
 find_package(catkin REQUIRED
   autoware_build_flags
-  autoware_msgs
   roscpp
+  rospy
   rosunit
   std_msgs
 )
 
-find_package(Eigen3 REQUIRED)
-
 catkin_package(
   CATKIN_DEPENDS
-    autoware_msgs
     std_msgs
 )
 
 include_directories(
   ${catkin_INCLUDE_DIRS}
-  ${EIGEN3_INCLUDE_DIR}
 )
 
 add_executable(pub src/Publisher.cpp)
@@ -45,3 +41,9 @@ install(TARGETS sub
 install(DIRECTORY launch/
   DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/launch
 )
+foreach(T
+    scripts)
+  install(DIRECTORY ${T}
+    DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
+    USE_SOURCE_PERMISSIONS)
+endforeach()

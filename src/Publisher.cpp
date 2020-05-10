@@ -15,7 +15,7 @@ class Publisher {
   explicit Publisher(const std::string &topic, const size_t numberOfVars)
       : m_publisher(m_node.advertise<std_msgs::String>(topic, 1000)),
         m_randDist(0, std::max<decltype(numberOfVars)>(1, numberOfVars) - 1),
-        m_messages(CrateMessageSet(numberOfVars)) {}
+        m_messages(CreatMessageSet(numberOfVars)) {}
 
   Publisher(Publisher &&) = default;
   Publisher(const Publisher &) = default;
@@ -40,7 +40,7 @@ class Publisher {
     return m_messages[m_randDist(m_randDev)];
   }
 
-  static std::vector<std_msgs::String> CrateMessageSet(const size_t size) {
+  static std::vector<std_msgs::String> CreatMessageSet(const size_t size) {
     std::vector<std_msgs::String> result(size);
     result.reserve(size);
     size_t i = 1;
